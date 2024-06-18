@@ -17,9 +17,13 @@ class Game {
   }  
 
   registerEvents() {    
-    document.addEventListener('keyup', (event) => {
+    document.addEventListener('keydown', (event) => {
       let currentSymbol = this.currentSymbol.textContent;
-      if (event.key === currentSymbol) {
+      // console.log(event.key);
+      // if (event.key === 'Shift'){
+      //   return;
+      // }
+      if (event.key.toLowerCase() === currentSymbol.toLowerCase()) {
         this.success();
       } else {
         this.fail();
